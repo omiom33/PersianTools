@@ -226,8 +226,7 @@ def generate_words(dict_txt,aff_txt):
                 item=ExtentionList[i:i+2]
                 for dictCase in dicts:
                     if item in dictCase:
-                        for c in dictCase[item]:
-                            words.append(word_base+c)
+                        words.extend(word_base+c for c in dictCase[item])
             for i in range(0,len(ExtentionList)-1,2):
                 item3=ExtentionList[i:i+2]
                 if item3 in affdictBegin:
@@ -238,8 +237,7 @@ def generate_words(dict_txt,aff_txt):
                             item2=ExtentionList[id:id+2]
                             for dictCase in dicts:
                                 if item2 in dictCase:
-                                    for a in dictCase[item2]:
-                                        words.append(b+word_base+a)
+                                    words.extend(b+word_base+a for a in dictCase[item2])
         else:
             words.append(word)
     words=list(set(words))
