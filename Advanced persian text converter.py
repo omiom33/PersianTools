@@ -1402,7 +1402,7 @@ def get_pptx(file_path):
             shape_num+=1
             text = shape.text_frame.text
             Out_texts[shape_num]=text
-            
+
     return Out_texts
 
 def Open_pptx(file_path):
